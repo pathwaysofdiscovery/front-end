@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{
+			"node_name":"Hackathon",
+			"prereqs":[
+				"Software Dev Experience", "Time Management", "Group Coordination"
+			],
+			"next": [
+				"Attainable Objectives", "Registered for an upcoming Event"
+			],
+			"rating": "3"
+		}
+	]
+}
