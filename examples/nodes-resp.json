@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{
+			"node_name":"NAME1",
+			"prereqs":[
+				"NAME2", "NAME3"
+			],
+			"next": [
+				"NAME4", "NAME5"
+			],
+			"rating": "3"
+		}
+	]
+}
