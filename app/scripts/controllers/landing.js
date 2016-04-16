@@ -19,7 +19,7 @@ angular.module('podsApp')
                     $location.path("/main");
 
                 }
-            })
+            });
         };
 
         current_check();

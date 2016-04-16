@@ -25,8 +25,8 @@ angular.module('podsApp')
         landingService.who = function (){
             return $http.get('/api/who').then(function(response){
                 //console.log(response.data);
-                return response.data
-            })
+                return response.data;
+            });
         };
 
         landingService.authenticate = function (username, password) {
