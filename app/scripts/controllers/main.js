@@ -58,11 +58,13 @@ angular.module('podsApp')
     $scope.addNode = function () {
       if ($scope.model.topic.id != undefined && $scope.new_node.name != undefined) {
         dataService.addNode($scope.model.topic.id, $scope.new_node_name).then(function (data) {
-          
+
         });
       } else {
         $scope.error = "No Topic selected, or no name for New Node."
       }
     };
+
+    $scope.addComment()
 
   });

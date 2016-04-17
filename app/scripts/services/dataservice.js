@@ -14,7 +14,12 @@ angular.module('podsApp')
 
     dataService.getTopics = function () {
       return $http.get('/api/topics').then(function (response) {
-        //console.log(response.data);
+        //console.log(response.data); [
+        //                              {"name": "topic",
+        //                               "id": "id},
+        //                              ["topic", "id],
+        //                             ]
+
         return response.data;
       });
     };
