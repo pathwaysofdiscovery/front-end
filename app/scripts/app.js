@@ -21,12 +21,12 @@ angular
     $routeProvider
 
       .when('/main', {
-        templateUrl: 'static/app/views/main.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
       .when('/about', {
-        templateUrl: 'static/app/views/about.html',
+        templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })

@@ -12,14 +12,14 @@ angular.module('podsApp')
         $scope.stage = '1';
 
         var current_check = function () {
-            landingService.who().then(function (data) {
-                //console.log(data.username);
-                if (data.username !== 'anonymous') {
-                    landingService.username = data.username;
+            // landingService.who().then(function (data) {
+            //     //console.log(data.username);
+            //     if (data.username !== 'anonymous') {
+            //         landingService.username = data.username;
                     $location.path("/main");
 
-                }
-            });
+            //     }
+            // });
         };
 
         current_check();

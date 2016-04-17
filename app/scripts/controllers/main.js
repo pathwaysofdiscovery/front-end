@@ -27,7 +27,7 @@ angular.module('podsApp')
     };
 
     //INIT
-    login_check();
+    // login_check();
     $scope.model = {};
     $scope.model.topic = {};
 
