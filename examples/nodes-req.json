@@ -1,0 +1,4 @@
+{
+	"query": "STRING",
+	"url": "/api/nodes/topics"
+}
