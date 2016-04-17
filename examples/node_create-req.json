@@ -9,5 +9,5 @@
 		["ID4", "NAME4"],
 		["ID5", "NAME5"]
 	],
-	"url": "/api/topics/nodes/create"
+	"url": "/api/nodes/create"
 }

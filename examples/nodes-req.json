@@ -1,4 +1,0 @@
-{
-	"node_name": "STRING",
-	"url": "/api/nodes/$NAME"
-}

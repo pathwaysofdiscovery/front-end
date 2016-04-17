@@ -1,5 +1,5 @@
 {
 	"username": "grsn.hilliard@gmail.com",
 	"authenicated": "True",
-	"url": "/api/user"
+	"url": "/api/login"
 }

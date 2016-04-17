@@ -1,0 +1,19 @@
+{
+	"topic_name": "STRING",
+	"topic_id":"STRING",
+	"nodes":[
+				{
+					"name": "STRING",
+					"id": "STRING",
+					"rating": "STRING"
+				},
+				{
+					"name": "STRING",
+					"id": "STRING",
+					"rating": "STRING"
+				}
+			],
+	"rating": "STRING",
+	"error": "STRING",
+	"url": "/api/topics/info"
+}
