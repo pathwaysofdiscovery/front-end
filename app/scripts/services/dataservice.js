@@ -8,7 +8,7 @@
  * Service in the podsApp.
  */
 angular.module('podsApp')
-  .service('dataService', function () {
+  .service('dataService', function ($http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var dataService = {};
 
@@ -69,5 +69,7 @@ angular.module('podsApp')
     };
 
     return dataService;
-
+    
+    
+    
   });

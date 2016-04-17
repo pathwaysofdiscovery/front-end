@@ -1,0 +1,101 @@
+<div class="container-fluid" ng-cloak>
+  <md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>Pathways To Discovery</span>
+      </h2>
+      <span flex></span>
+      <h3>
+        <span>{{username}}</span>
+      </h3>
+
+      <!--&lt;!&ndash;<md-input-container md-no-float class="md-block">&ndash;&gt;-->
+      <!--&lt;!&ndash;<input ng-model="user.address2" placeholder="Search" style="background: white">&ndash;&gt;-->
+      <!--&lt;!&ndash;</md-input-container>&ndash;&gt;-->
+      <!--<span style="margin-right: 5px; margin-left: 5px"></span>-->
+      <!--<md-autocomplete-->
+      <!--md-selected-item="ctrl.selectedItem"-->
+      <!--md-search-text="ctrl.searchText"-->
+      <!--md-items="item in model.topics"-->
+      <!--md-item-text="item.name"-->
+      <!--md-min-length="0"-->
+      <!--placeholder="What Topic are you looking for?">-->
+
+    </div>
+  </md-toolbar>
+  <div layout="row">
+    <div class="col-lg-8">
+      <!--SEARCH-->
+      <div layout="row" ng-show="true" style="padding-left: 10px">
+
+        <md-content class="md-padding" layout="column center">
+          <md-input-container class="">
+            <label>Search</label>
+            <input ng-model="model.search"/>
+
+          </md-input-container>
+
+        </md-content>
+        <md-content layout="column center">
+          <md-button md-no-ink class="md-primary" ng-click="createTopic(model.search)">Don't see it? Create it!
+          </md-button>
+        </md-content>
+
+
+        <!--<md-content class="md-padding">-->
+        <!--<form ng-submit="$event.preventDefault()">-->
+        <!--<md-autocomplete-->
+        <!--md-no-cache="ctrl.noCache"-->
+        <!--md-selected-item="ctrl.selectedItem"-->
+        <!--md-search-text="ctrl.searchText"-->
+        <!--md-items="item in querySearch(model.topics)"-->
+        <!--md-item-text="item.name"-->
+        <!--md-min-length="0"-->
+        <!--placeholder="What Topic are you looking for?">-->
+        <!--<md-item-template>-->
+        <!--<span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.name}}</span>-->
+        <!--</md-item-template>-->
+        <!--<md-not-found>-->
+        <!--No Topics matching "{{ctrl.searchText}}" were found.-->
+        <!--<a ng-click="createTopic(ctrl.searchText)">Create a new one!</a>-->
+        <!--</md-not-found>-->
+        <!--</md-autocomplete>-->
+        <!--</form>-->
+        <!--</md-content>-->
+      </div>
+      <!--NODE LIST-->
+      <div class="row">
+        <md-content class="md-padding">
+          <md-grid-list
+            md-cols="8"
+            md-row-height="2:2"
+            md-gutter="12px">
+            <md-grid-tile class="red"
+                          md-rowspan="2" md-colspan="2" ng-click="getNodeInfo(node)"
+                          ng-repeat="node in model.nodes | filter:model.search">
+              <md-grid-tile-footer>
+                <h3>{{ node.name }}</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+          </md-grid-list>
+        </md-content>
+      </div>
+    </div>
+
+
+    <!--NODE BIO-->
+    <div class="col-lg-4 scroller" style="background: #b7b7b7">
+      <div layout="row" ng-show="model.node != undefined">
+        <md-content class="md-padding">
+        <h3>{{model.node.name}}</h3>
+
+
+        </md-content>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>

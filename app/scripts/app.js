@@ -15,13 +15,15 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    // 'ngTouch',
+    'mgcrea.ngStrap',
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider
 
       .when('/main', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/grayson.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
@@ -35,6 +37,11 @@ angular
         controller: 'LandingCtrl',
         controllerAs: 'landing'
       })
+      // .when('/meow', {
+      //   templateUrl: 'views/meow.html',
+      //   controller: 'AppCtrl',
+      //   controllerAs: 'meow'
+      // })
       .otherwise({
         redirectTo: '/main'
       });

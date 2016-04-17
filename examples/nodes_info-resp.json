@@ -16,6 +16,7 @@
 		{
 			"title": "STRING",
 			"domain": "STRING",
+			"rating": "STRING",
 			"comments": [
 							{
 								"username": "STRING",
@@ -26,6 +27,7 @@
 		{
 			"title": "STRING",
 			"domain": "STRING",
+			
 			"comments": [
 							{
 								"username": "STRING",

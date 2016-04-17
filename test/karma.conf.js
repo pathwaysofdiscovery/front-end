@@ -32,6 +32,11 @@ module.exports = function(config) {
       'bower_components/angular-aria/angular-aria.js',
       'bower_components/angular-messages/angular-messages.js',
       'bower_components/angular-material/angular-material.js',
+      'bower_components/angular-strap/dist/angular-strap.js',
+      'bower_components/angular-strap/dist/angular-strap.tpl.js',
+      'bower_components/lodash/lodash.js',
+      'bower_components/vis/dist/vis.min.js',
+      'bower_components/angular-visjs/angular-vis.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
