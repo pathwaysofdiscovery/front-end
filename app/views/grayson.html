@@ -2,7 +2,7 @@
   <md-toolbar md-scroll-shrink>
     <div class="md-toolbar-tools">
       <h2>
-        <span>Pathways To Discovery</span>
+        <span>Pathways Of Discovery</span>
       </h2>
       <span flex></span>
       <h3>
@@ -24,7 +24,7 @@
     </div>
   </md-toolbar>
   <div layout="row">
-    <div class="col-lg-8">
+    <div class="col-lg-8 scroller">
       <!--SEARCH-->
       <div layout="row" ng-show="true" style="padding-left: 10px">
 
@@ -70,12 +70,12 @@
             md-cols="8"
             md-row-height="2:2"
             md-gutter="12px">
-            <md-grid-tile class="red"
+            <md-grid-tile class="blue"
                           md-rowspan="2" md-colspan="2" ng-click="getNodeInfo(node)"
                           ng-repeat="node in model.nodes | filter:model.search">
-              <md-grid-tile-footer>
-                <h3>{{ node.name }}</h3>
-              </md-grid-tile-footer>
+              <md-grid-tile-header>
+                <h2>{{ node.name }}</h2>
+              </md-grid-tile-header>
             </md-grid-tile>
           </md-grid-list>
         </md-content>
@@ -85,14 +85,55 @@
 
     <!--NODE BIO-->
     <div class="col-lg-4 scroller" style="background: #b7b7b7">
-      <div layout="row" ng-show="model.node != undefined">
+      <!--<div layout="row" ng-show="model.node != undefined">-->
+        <!--<md-content class="md-padding">-->
+        <!--<h3>{{model.node.name}}</h3>-->
+
+
+        <!--</md-content>-->
+
         <md-content class="md-padding">
-        <h3>{{model.node.name}}</h3>
 
+          <md-grid-list md-cols="5"
+                        md-row-height="2:2"
+                        md-gutter="10px">
+            <!--Topic Name-->
+            <!--CHANGE THIS TO REAL STUFF-->
+             <md-grid-tile class="white" md-rowspan="1" md-colspan="5">
+              <h2> Javascript </h2>
+            </md-grid-tile>
+            <!--Node Name-->
+            <md-grid-tile class="blue" md-rowspan="1" md-colspan="4">
+              <h3>{{ model.node.name}}</h3>
+            </md-grid-tile>
 
+            <md-grid-tile class="blue" md-rowspan="1" md-colspan="1">
+              <!--CHANGE THIS TO RATING-->
+              <h3>{{ model.node.id}}</h3>
+            </md-grid-tile>
+
+            <!--<md-grid-tile class="blue" md-rowspan="1" md-colspan="2">-->
+              <!--&lt;!&ndash;<md-grid-tile-header >&ndash;&gt;-->
+                <!--&lt;!&ndash;<h6 layout="center center"> Domain </h6>&ndash;&gt;-->
+              <!--&lt;!&ndash;</md-grid-tile-header>&ndash;&gt;-->
+              <!--&lt;!&ndash;CHANGE THIS TO DOMAIN&ndash;&gt;-->
+              <!--<h3> Domain: {{ model.node.lower}} </h3>-->
+            <!--</md-grid-tile>-->
+
+            <md-grid-tile class="white" md-rowspan="1" md-colspan="5">
+              <h2> Resources</h2>
+            </md-grid-tile>
+
+            <md-grid-tile class="green" md-rowspan="1" md-colspan="5" ng-repeat="resource in model.node.resources">
+              <h3 layout="row"> {{resource.name}}</h3>
+              <h3 layout="row"> {{resource.rating}}</h3>
+            </md-grid-tile>
+
+          </md-grid-list>
         </md-content>
 
-      </div>
+
+      <!--</div>-->
     </div>
   </div>
   <div class="row">

@@ -34,24 +34,33 @@ angular.module('podsApp')
     $scope.model.topics = [{name: "First", id: "1", lower: "first"},
       {name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "first"}];
 
-    $scope.model.nodes = [{name: "First", id: "1", lower: "first"},
-      {name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "third"}, {
-        name: "Fourth",
-        id: "4",
-        lower: "fourth"
-      }, {name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "third"}, {
-        name: "Fourth",
-        id: "4",
-        lower: "fourth"
-      },{name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "third"}, {
-        name: "Fourth",
-        id: "4",
-        lower: "fourth"
-      },{name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "third"}, {
-        name: "Fourth",
-        id: "4",
-        lower: "fourth"
-      }];
+    $scope.model.nodes = [
+      {
+        name: "Functions", id: "2", lower: "second", resources: [
+        {
+          name: "RESNAME",
+          url: "URL",
+          rating: '10'
+        },
+        {
+          name: "RESNAME",
+          url: "URL",
+          rating: '10'
+        }]},
+        {
+          name: "Alogrithms", id: "2", lower: "second", resources: [
+          {
+            name: "RESNAME",
+            url: "URL",
+            rating: '10'
+          },
+          {
+            name: "RESNAME",
+            url: "URL",
+            rating: '10'
+          }
+        ]
+        }];
 
     // $scope.SearchBoxAppear = true;
     //
