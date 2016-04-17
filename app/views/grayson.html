@@ -73,7 +73,7 @@
             md-row-height="2:2"
             md-gutter="12px">
             <md-button class="blue"
-                          md-rowspan="2" md-colspan="2" ng-click="toggleRight()"
+                          md-rowspan="2" md-colspan="2" ng-click="toggleRight();getTopicInfo(topic);"
                           ng-repeat="topic in model.topics | filter:model.search">
                 <div>
                   <md-button ng-click=""
@@ -88,8 +88,58 @@
       </div>
     </div>
 
+    <!--NODE BIO-->
+    <div class="col-lg-4 scroller" style="background: #b7b7b7">
+      <!--<div layout="row" ng-show="model.node != undefined">-->
+        <!--<md-content class="md-padding">-->
+        <!--<h3>{{model.node.name}}</h3>-->
 
-    
+
+        <!--</md-content>-->
+
+        <md-content class="md-padding">
+
+          <md-grid-list md-cols="5"
+                        md-row-height="2:2"
+                        md-gutter="10px">
+            <!--Topic Name-->
+            <!--CHANGE THIS TO REAL STUFF-->
+             <md-grid-tile class="blue" md-rowspan="1" md-colspan="5">
+              <h2> {{model.topic.name}} </h2>
+            </md-grid-tile>
+            <!--Node Name-->
+            <!--<md-grid-tile class="blue" md-rowspan="1" md-colspan="4">-->
+              <!--<h3>{{ model.topic.name}}</h3>-->
+            <!--</md-grid-tile>-->
+
+            <!--<md-grid-tile class="blue" md-rowspan="1" md-colspan="1">-->
+              <!--&lt;!&ndash;CHANGE THIS TO RATING&ndash;&gt;-->
+              <!--<h3>{{ model.topic.id}}</h3>-->
+            <!--</md-grid-tile>-->
+
+            <!--<md-grid-tile class="blue" md-rowspan="1" md-colspan="2">-->
+              <!--&lt;!&ndash;<md-grid-tile-header >&ndash;&gt;-->
+                <!--&lt;!&ndash;<h6 layout="center center"> Domain </h6>&ndash;&gt;-->
+              <!--&lt;!&ndash;</md-grid-tile-header>&ndash;&gt;-->
+              <!--&lt;!&ndash;CHANGE THIS TO DOMAIN&ndash;&gt;-->
+              <!--<h3> Domain: {{ model.node.lower}} </h3>-->
+            <!--</md-grid-tile>-->
+
+            <md-grid-tile class="white" md-rowspan="1" md-colspan="5">
+              <h2> Subtopics</h2>
+            </md-grid-tile>
+
+            <md-grid-tile class="green" md-rowspan="1" md-colspan="5" ng-repeat="node in model.topic.nodes">
+              <h3 layout="row"> {{node.name}}</h3>
+              <h3 layout="row"> {{node.rating}}</h3>
+            </md-grid-tile>
+
+          </md-grid-list>
+        </md-content>
+
+
+      <!--</div>-->
+    </div>
   </div>
   <div class="row">
 

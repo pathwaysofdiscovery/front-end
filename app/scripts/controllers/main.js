@@ -84,9 +84,14 @@ angular.module('podsApp')
       });
     };
 
-    $scope.getNodeInfo = function (node) {
-      console.log(node.id);
-      $scope.model.node = node;
+    $scope.getTopicInfo = function (topic) {
+      console.log(topic.id);
+      $scope.model.topic = topic;
+      console.log($scope.model.topic);
+      dataService.getNodes(topic.id).then(function (data) {
+        $scope.model.topic.nodes = data.nodes;
+      });
+
     };
 
     $scope.getNodes = function () {
