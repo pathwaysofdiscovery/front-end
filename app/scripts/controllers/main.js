@@ -86,7 +86,10 @@ angular.module('podsApp')
 
     $scope.getNodeInfo = function (node) {
       console.log(node.id);
-      $scope.model.node = node;
+      dataService.getNodeInfo(node.id).then(function (data) {
+        $scope.model.nodes = data.nodes;  
+      });
+      
     };
 
     $scope.getNodes = function () {

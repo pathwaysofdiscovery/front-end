@@ -39,7 +39,7 @@ angular.module('podsApp')
       return $http({
         method: 'POST',
         url: '/api/topics/create',
-        data: $.param({'name': topic_name}),
+        data: {name: topic_name},
         headers: {'Content-Type': 'application/json'}
       }).then(function (response) {
         return response.data;
@@ -47,12 +47,7 @@ angular.module('podsApp')
     };
 
     dataService.getNodes = function (topic_id) {
-      return $http({
-        method: 'POST',
-        url: '/api/nodes',
-        data: $.param({'topic_id': topic_id}),
-        headers: {'Content-Type': 'application/json'}
-      }).then(function (response) {
+      return $http.get('/api/nodes/bytopic/' + topic_id).then(function (response) {
         return response.data;
       });
     };
@@ -61,7 +56,7 @@ angular.module('podsApp')
       return $http({
         method: 'POST',
         url: '/api/nodes/create',
-        data: $.param({'topic_id': topic_id, 'node_name': node_name }),
+        data: {topic_id: topic_id, node_name: node_name},
         headers: {'Content-Type': 'application/json'}
       }).then(function (response) {
         return response.data;
