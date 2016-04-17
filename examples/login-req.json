@@ -1,5 +1,5 @@
 {
-	"user_email": "grsn.hilliard@gmail.com",
+	"username": "grsn.hilliard",
 	"password": "5f4dcc3b5aa765d61d8327deb882cf99",
-	"url": "/user"
+	"url": "/api/user"
 }

@@ -1,0 +1,6 @@
+{
+	"topic_name": "STRING",
+	"topic_id": "STRING",
+	"error": "STRING",
+	"url": "/api/topics/create"
+}

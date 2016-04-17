@@ -1,4 +1,4 @@
 {
-	"query": "STRING",
-	"url": "/api/nodes/topics"
+	"node_name": "STRING",
+	"url": "/api/nodes/$NAME"
 }

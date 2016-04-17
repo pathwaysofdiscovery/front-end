@@ -19,10 +19,28 @@ angular.module('podsApp')
             });
     };
 
-    dataService.searchTopics = function () {
-       return $http.get('/api/topics').then(function(response){
-                //console.log(response.data);
+    dataService.searchTopics = function (query_string) {
+      return $http({
+                method: 'POST',
+                url: '/api/topics/search',
+                data: $.param({'query': query_string}),
+                headers: {'Content-Type': 'application/json'}
+            }).then(function (response) {
                 return response.data;
             });
     };
+
+    dataService.createTopic = function (topic_name) {
+      return $http({
+                method: 'POST',
+                url: '/api/topics/create',
+                data: $.param({'topic_name': topic_name}),
+                headers: {'Content-Type': 'application/json'}
+            }).then(function (response) {
+                return response.data;
+            });
+    };
+
+    return dataService;
+
   });
