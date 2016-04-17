@@ -121,12 +121,12 @@
             <!--</md-grid-tile>-->
 
             <md-grid-tile class="white" md-rowspan="1" md-colspan="5">
-              <h2> Resources</h2>
+              <h2> Subtopics</h2>
             </md-grid-tile>
 
-            <md-grid-tile class="green" md-rowspan="1" md-colspan="5" ng-repeat="resource in model.node.resources">
-              <h3 layout="row"> {{resource.name}}</h3>
-              <h3 layout="row"> {{resource.rating}}</h3>
+            <md-grid-tile class="green" md-rowspan="1" md-colspan="5" ng-repeat="node in model.topic.nodes">
+              <h3 layout="row"> {{node.name}}</h3>
+              <h3 layout="row"> {{node.rating}}</h3>
             </md-grid-tile>
 
           </md-grid-list>
