@@ -8,7 +8,7 @@
  * Controller of the podsApp
  */
 angular.module('podsApp')
-  .controller('MainCtrl', function ($scope, $location, landingService, DataService) {
+  .controller('MainCtrl', function ($scope, $location, landingService, dataService) {
     //Login Check, must be logged in to reach the main page!!!
     var login_check = function () {
       if (landingService.username === undefined) {
@@ -35,25 +35,29 @@ angular.module('podsApp')
     //
     $scope.create_topic = function () {
       if ($scope.model.new_topic != undefined) {
-        DataService.create_topic($scope.model.new_topic).then(function (data) {
+        dataService.create_topic($scope.model.new_topic).then(function (data) {
           $scope.model.topic.name = data.topic_name;
           $scope.model.topic.id = data.topic_id;
           $scope.model.topic.nodes = [];
         });
-      }else{
+      } else {
         $scope.model.error = data.error;
       }
     };
-  
+
     $scope.get_nodes = function () {
-      if($scope.model.topic.id != undefined){
-        
+      if ($scope.model.topic.id != undefined) {
+        dataService.getNodes($scope.model.topic.id).then(function (data) {
+          $scope.topic.nodes = data.nodes;
+        });
+      }else{
+        $scope.error = data.error;
       }
     };
-    
+
     $scope.add_node = function () {
-      if ($scope.model.topic.id != undefined){
-        
+      if ($scope.model.topic.id != undefined) {
+
       }
     };
 

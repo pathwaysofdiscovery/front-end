@@ -1,0 +1,38 @@
+{
+	"topic_name": "STRING",
+	"topic_id":"STRING",
+	"node_name": "STRING",
+	"node_id": "STRING",
+	"prereqs":[
+		["ID2", "NAME2"],
+		["ID3", "NAME3"] 
+	],
+	"next": [
+		["ID4", "NAME4"],
+		["ID5", "NAME5"]
+	],
+	"rating": "3",
+	"resources":[
+		{
+			"title": "STRING",
+			"domain": "STRING",
+			"comments": [
+							{
+								"username": "STRING",
+								"text": "STRING"
+							}
+						]
+		},
+		{
+			"title": "STRING",
+			"domain": "STRING",
+			"comments": [
+							{
+								"username": "STRING",
+								"text": "STRING"
+							}
+						]
+		}
+	],
+	"url": "/api/nodes/info"
+}
