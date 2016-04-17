@@ -24,16 +24,16 @@ angular.module('podsApp')
       });
     };
 
-    dataService.searchTopics = function (query_string) {
-      return $http({
-        method: 'POST',
-        url: '/api/topics/search',
-        data: $.param({'query': query_string}),
-        headers: {'Content-Type': 'application/json'}
-      }).then(function (response) {
-        return response.data;
-      });
-    };
+    // dataService.searchTopics = function (query_string) {
+    //   return $http({
+    //     method: 'POST',
+    //     url: '/api/topics/search',
+    //     data: $.param({'query': query_string}),
+    //     headers: {'Content-Type': 'application/json'}
+    //   }).then(function (response) {
+    //     return response.data;
+    //   });
+    // };
 
     dataService.createTopic = function (topic_name) {
       return $http({
@@ -69,6 +69,6 @@ angular.module('podsApp')
     };
 
     return dataService;
-    
-    
+
+
   });

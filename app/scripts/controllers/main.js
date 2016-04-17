@@ -66,15 +66,12 @@ angular.module('podsApp')
     // $scope.SearchBoxAppear = true;
     //
     $scope.createTopic = function (new_topic) {
-      if (new_topic != undefined) {
-        dataService.createTopic(new_topic).then(function (data) {
-          $scope.model.topic.name = data.topic_name;
-          $scope.model.topic.id = data.topic_id;
-          $scope.model.topic.nodes = [];
-        });
-      } else {
-        $scope.model.error = "No name for New Topic.";
-      }
+      dataService.createTopic(new_topic).then(function (data) {
+        $scope.model.topic.name = data.name;
+        $scope.model.topic.id = data.id;
+        // $scope.model.topic.nodes = [];
+      });
+
     };
 
     $scope.getTopics = function () {
