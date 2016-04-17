@@ -46,21 +46,22 @@ angular.module('podsApp')
           name: "RESNAME",
           url: "URL",
           rating: '10'
-        }]},
+        }]
+      },
+      {
+        name: "Alogrithms", id: "2", lower: "second", resources: [
         {
-          name: "Alogrithms", id: "2", lower: "second", resources: [
-          {
-            name: "RESNAME",
-            url: "URL",
-            rating: '10'
-          },
-          {
-            name: "RESNAME",
-            url: "URL",
-            rating: '10'
-          }
-        ]
-        }];
+          name: "RESNAME",
+          url: "URL",
+          rating: '10'
+        },
+        {
+          name: "RESNAME",
+          url: "URL",
+          rating: '10'
+        }
+      ]
+      }];
 
     // $scope.SearchBoxAppear = true;
     //
@@ -77,7 +78,10 @@ angular.module('podsApp')
     };
 
     $scope.getTopics = function () {
-
+      dataService.getTopics().then(function (data) {
+        $scope.model.topics = data.topics;
+        console.log($scope.model.topics)
+      });
     };
 
     $scope.getNodeInfo = function (node) {
