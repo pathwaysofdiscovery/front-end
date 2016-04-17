@@ -1,0 +1,13 @@
+{
+	"node_name": "STRING",
+	"topic_id": "STRING",
+	"prereqs":[
+		["ID2", "NAME2"],
+		["ID3", "NAME3"] 
+	],
+	"next": [
+		["ID4", "NAME4"],
+		["ID5", "NAME5"]
+	],
+	"url": "/api/topics/nodes/create"
+}

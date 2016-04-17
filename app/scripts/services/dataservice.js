@@ -41,6 +41,10 @@ angular.module('podsApp')
             });
     };
 
+    dataService.getNodes = function (topic_id) {
+
+    };
+
     return dataService;
 
   });
