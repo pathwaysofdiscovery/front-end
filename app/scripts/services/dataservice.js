@@ -47,6 +47,7 @@ angular.module('podsApp')
     };
 
     dataService.getNodes = function (topic_id) {
+      console.log('/api/nodes/bytopic/' + topic_id);
       return $http.get('/api/nodes/bytopic/' + topic_id).then(function (response) {
         return response.data;
       });
