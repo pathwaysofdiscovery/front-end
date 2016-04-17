@@ -1,5 +1,4 @@
-<div class="container-fluid" ng-cloak>
-  <md-toolbar md-scroll-shrink>
+<md-toolbar md-scroll-shrink>
     <div class="md-toolbar-tools">
       <h2>
         <span>Pathways Of Discovery</span>
@@ -23,6 +22,9 @@
 
     </div>
   </md-toolbar>
+<div ng-controller="AppCtrl" layout="" style="" >
+<div class="container-fluid" ng-cloak>
+  
   <div layout="row">
     <div class="col-lg-8 scroller">
       <!--SEARCH-->
@@ -70,73 +72,66 @@
             md-cols="8"
             md-row-height="2:2"
             md-gutter="12px">
-            <md-grid-tile class="blue"
-                          md-rowspan="2" md-colspan="2" ng-click="getNodeInfo(node)"
+            <md-button class="blue"
+                          md-rowspan="2" md-colspan="2" ng-click="toggleRight()"
                           ng-repeat="topic in model.topics | filter:model.search">
-              <md-grid-tile-header>
-                <h2>{{ topic.name }}</h2>
-              </md-grid-tile-header>
-            </md-grid-tile>
+                <div>
+                  <md-button ng-click=""
+                    class="md-primary" hide-gt-md>
+                    <h2>{{ topic.name }}</h2>
+                  </md-button>
+                </div>
+                
+
           </md-grid-list>
         </md-content>
       </div>
     </div>
 
 
-    <!--NODE BIO-->
-    <div class="col-lg-4 scroller" style="background: #b7b7b7">
-      <!--<div layout="row" ng-show="model.node != undefined">-->
-        <!--<md-content class="md-padding">-->
-        <!--<h3>{{model.node.name}}</h3>-->
-
-
-        <!--</md-content>-->
-
-        <md-content class="md-padding">
-
-          <md-grid-list md-cols="5"
-                        md-row-height="2:2"
-                        md-gutter="10px">
-            <!--Topic Name-->
-            <!--CHANGE THIS TO REAL STUFF-->
-             <md-grid-tile class="white" md-rowspan="1" md-colspan="5">
-              <h2> Javascript </h2>
-            </md-grid-tile>
-            <!--Node Name-->
-            <md-grid-tile class="blue" md-rowspan="1" md-colspan="4">
-              <h3>{{ model.node.name}}</h3>
-            </md-grid-tile>
-
-            <md-grid-tile class="blue" md-rowspan="1" md-colspan="1">
-              <!--CHANGE THIS TO RATING-->
-              <h3>{{ model.node.id}}</h3>
-            </md-grid-tile>
-
-            <!--<md-grid-tile class="blue" md-rowspan="1" md-colspan="2">-->
-              <!--&lt;!&ndash;<md-grid-tile-header >&ndash;&gt;-->
-                <!--&lt;!&ndash;<h6 layout="center center"> Domain </h6>&ndash;&gt;-->
-              <!--&lt;!&ndash;</md-grid-tile-header>&ndash;&gt;-->
-              <!--&lt;!&ndash;CHANGE THIS TO DOMAIN&ndash;&gt;-->
-              <!--<h3> Domain: {{ model.node.lower}} </h3>-->
-            <!--</md-grid-tile>-->
-
-            <md-grid-tile class="white" md-rowspan="1" md-colspan="5">
-              <h2> Resources</h2>
-            </md-grid-tile>
-
-            <md-grid-tile class="green" md-rowspan="1" md-colspan="5" ng-repeat="resource in model.node.resources">
-              <h3 layout="row"> {{resource.name}}</h3>
-              <h3 layout="row"> {{resource.rating}}</h3>
-            </md-grid-tile>
-
-          </md-grid-list>
-        </md-content>
-
-
-      <!--</div>-->
-    </div>
+    
   </div>
   <div class="row">
 
   </div>
+</div>
+
+  <section layout="row" flex>
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-disable-backdrop
+        md-whiteframe="4">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide-md show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+        </p>
+      </md-content>
+    </md-sidenav>
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout-padding>
+        <form>
+          <md-input-container>
+            <label for="testInput">Test input</label>
+            <input type="text" id="testInput"
+                   ng-model="data" md-autofocus>
+          </md-input-container>
+        </form>
+        <md-button ng-click="close()" class="md-primary">
+          Close Sidenav Right
+        </md-button>
+      </md-content>
+    </md-sidenav>
+  </section>
 </div>
