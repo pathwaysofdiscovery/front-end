@@ -39,7 +39,7 @@ angular.module('podsApp')
       return $http({
         method: 'POST',
         url: '/api/topics/create',
-        data: $.param({'topic_name': topic_name}),
+        data: $.param({'name': topic_name}),
         headers: {'Content-Type': 'application/json'}
       }).then(function (response) {
         return response.data;

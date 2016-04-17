@@ -29,6 +29,7 @@ angular.module('podsApp')
     //INIT
     // login_check();
     $scope.model = {};
+    $scope.model.topic = {};
 
     $scope.username = "Grayson";
     $scope.model.topics = [{name: "First", id: "1", lower: "first"},
@@ -66,9 +67,11 @@ angular.module('podsApp')
     // $scope.SearchBoxAppear = true;
     //
     $scope.createTopic = function (new_topic) {
+      console.log(new_topic);
       dataService.createTopic(new_topic).then(function (data) {
         $scope.model.topic.name = data.name;
         $scope.model.topic.id = data.id;
+        console.log(data);
         // $scope.model.topic.nodes = [];
       });
 
