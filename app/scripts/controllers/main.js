@@ -29,9 +29,8 @@ angular.module('podsApp')
     //INIT
     // login_check();
     $scope.model = {};
-    $scope.model.topic = {};
-
-
+    $scope.model.topics = ["first","second","third"];
+    $scope.SearchBoxAppear = true;
     //
     $scope.createTopic = function () {
       if ($scope.model.new_topic != undefined) {
