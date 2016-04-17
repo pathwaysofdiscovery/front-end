@@ -52,6 +52,17 @@ angular.module('podsApp')
       });
     };
 
+    dataService.addNode = function (topic_id, node_name) {
+      return $http({
+        method: 'POST',
+        url: '/api/nodes/create',
+        data: $.param({'topic_id': topic_id, 'node_name': node_name }),
+        headers: {'Content-Type': 'application/json'}
+      }).then(function (response) {
+        return response.data;
+      });
+    };
+
     return dataService;
 
   });

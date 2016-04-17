@@ -33,31 +33,35 @@ angular.module('podsApp')
 
 
     //
-    $scope.create_topic = function () {
+    $scope.createTopic = function () {
       if ($scope.model.new_topic != undefined) {
-        dataService.create_topic($scope.model.new_topic).then(function (data) {
+        dataService.createTopic($scope.model.new_topic).then(function (data) {
           $scope.model.topic.name = data.topic_name;
           $scope.model.topic.id = data.topic_id;
           $scope.model.topic.nodes = [];
         });
       } else {
-        $scope.model.error = data.error;
+        $scope.model.error = "No name for New Topic.";
       }
     };
 
-    $scope.get_nodes = function () {
+    $scope.getNodes = function () {
       if ($scope.model.topic.id != undefined) {
         dataService.getNodes($scope.model.topic.id).then(function (data) {
           $scope.topic.nodes = data.nodes;
         });
-      }else{
-        $scope.error = data.error;
+      } else {
+        $scope.error = "No topic selected.";
       }
     };
 
-    $scope.add_node = function () {
-      if ($scope.model.topic.id != undefined) {
-
+    $scope.addNode = function () {
+      if ($scope.model.topic.id != undefined && $scope.new_node.name != undefined) {
+        dataService.addNode($scope.model.topic.id, $scope.new_node_name).then(function (data) {
+          
+        });
+      } else {
+        $scope.error = "No Topic selected, or no name for New Node."
       }
     };
 
