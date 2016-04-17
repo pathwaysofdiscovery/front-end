@@ -128,5 +128,5 @@ angular.module('podsApp')
       };
     }
 
-
+    $scope.getTopics();
   });
