@@ -11,5 +11,5 @@
 	],
 	"rating": "3",
 	"customized": "False",
-	"url": "/api/nodes/search"
+	"url": "/api/topics/search"
 }

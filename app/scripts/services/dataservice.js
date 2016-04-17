@@ -19,4 +19,10 @@ angular.module('podsApp')
             });
     };
 
+    dataService.searchTopics = function () {
+       return $http.get('/api/topics').then(function(response){
+                //console.log(response.data);
+                return response.data;
+            });
+    };
   });
