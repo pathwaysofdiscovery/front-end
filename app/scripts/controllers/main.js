@@ -89,7 +89,7 @@ angular.module('podsApp')
       $scope.model.topic = topic;
       console.log($scope.model.topic);
       dataService.getNodes(topic.id).then(function (data) {
-        $scope.model.nodes = data.nodes;
+        $scope.model.topic.nodes = data.nodes;
       });
 
     };
