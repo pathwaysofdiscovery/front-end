@@ -42,6 +42,7 @@ angular.module('podsApp')
         data: {name: topic_name},
         headers: {'Content-Type': 'application/json'}
       }).then(function (response) {
+        console.log(response);
         return response.data;
       });
     };
