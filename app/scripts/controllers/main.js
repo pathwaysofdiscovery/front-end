@@ -32,8 +32,8 @@ angular.module('podsApp')
     $scope.model.topic = {};
 
     $scope.username = "Grayson";
-    $scope.model.topics = [{name: "First", id: "1", lower: "first"},
-      {name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "first"}];
+//    $scope.model.topics = [{name: "First", id: "1", lower: "first"},
+//      {name: "Second", id: "2", lower: "second"}, {name: "Third", id: "3", lower: "first"}];
 
     $scope.model.nodes = [
       {
@@ -72,7 +72,7 @@ angular.module('podsApp')
         $scope.model.topic.name = data.name;
         $scope.model.topic.id = data.id;
         console.log(data);
-        // $scope.model.topic.nodes = [];
+        $scope.model.topic.nodes = [];
       });
 
     };
